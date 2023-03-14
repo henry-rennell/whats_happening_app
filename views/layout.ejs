@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header_content">
+            <span><h1><a href="/">What's Happening?</a></h1></span>
+            <span>
+                <form action="">
+                    <input type="text">
+                    <button>Submit</button>
+                </form>
+            </span>
+            <span>
+                <form action="">
+                    <input type="text">
+                    <button>Submit</button>
+                </form>
+            </span>
+                <% if (isLoggedIn()) {%>
+                <span>
+                    <form action="/users/<%= currentUser.id %>" method="/get">
+                    <button>Profile</button>
+                    </form>
+                    <form action="/sessions" method="post">
+                        <label for=""><%= currentUser.username %></label>
+                        <input type="hidden" name="_method" value="delete">
+                        <button>Log Out</button>
+                    </form>
+                </span>
+                <% } else {%>
+                <span><a href="/login">Login</a> / <a href="/users/new">Sign Up</a></span>
+                <% } %>
+        </div>
+    </header>
+    <div class="container">
+        <%- body %>
+    </div>
+
+</body>
+</html>

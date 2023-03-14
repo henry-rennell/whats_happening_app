@@ -1,0 +1,20 @@
+
+    <div class="full_item">
+        <img src="<%= gig.image_url %>" alt="">
+        <section>
+            <h2><%= gig.title %></h2>
+            <h3>Hosted by: <%= gig.posted_by %></h3>
+            <p class="description"><%= gig.description %></p>
+        </section>
+        <section class="bottom_text">
+            <span><%= gig.city %></span>
+            <span><%= gig.keywords %></span>
+            <span><%= gig.address %></span>
+        </section>
+
+        <% if (currentUser.username === gig.posted_by) {%>
+        <section>
+            <a href="/gigs/<%= gig.gig_id %>/edit"><button>Edit Gig</button></a>
+        </section>
+       <% } %>
+    </div>

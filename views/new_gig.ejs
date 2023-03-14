@@ -1,0 +1,17 @@
+<h2>Details Of Your Gig</h2>
+
+<form action="/gigs" method="post">
+    <label for="">Title</label>
+    <input type="text" name="title">
+    <label for="">Description</label>
+    <input type="text" name="description">
+    <label for="">Keywords</label>
+    <input type="text" name="keywords" placeholder="Enter keywords via format: keyword1, keyword2....">
+    <input type="hidden" name="posted_by" value="<%= currentUser.username %>">
+    <input type="hidden" name="city" value="<%= currentUser.city %>">
+    <label for="">Image Url</label>
+    <input type="text" name="image_url">
+    <label for="">Address</label>
+    <input type="text" name="address">
+    <button>submit</button>
+</form>

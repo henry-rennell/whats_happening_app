@@ -1,0 +1,18 @@
+
+<h2><%= gigs[0].posted_by %>'s gigs.</h2>
+
+<% for (let gig of gigs) {%>
+    <div class="item_preview">
+        <section>
+            <img src="<%= gig.image_url %>" alt="">
+        </section>
+        <div class="add_margin">
+            <p><a href="/gigs/<%= gig.gig_id %>"><%= gig.title %></a></p>
+        </div>
+        <section class="details add_margin">
+            <span><%= gig.posted_by %></span>
+            <span><%= gig.city %></span>
+        </section>
+    </div>
+
+<% } %>

@@ -1,0 +1,21 @@
+
+
+<div class="update_gig_form"> 
+    <form action="/gigs" method="post">
+        <input type="hidden" name="_method" value="put">
+        <label for="">Title</label>
+        <input type="text" name="title" value="<%= gig.title %>">
+        <label for="">Description</label>
+        <input type="text" name="description" value="<%= gig.description %>">
+        <label for="">Keywords</label>
+        <input type="text" name="keywords" value="<%= gig.keywords %>">
+        <label for="">City</label>
+        <input type="text" name="city" value="<%= gig.city %>">
+        <label for="">Image Url</label>
+        <input type="text" name="image_url" value="<%= gig.image_url %>">
+        <label for="">Address</label>
+        <input type="text" name="address" value="<%= gig.title %>">
+        <input type="hidden" name="gig_id" value="<%= gig.gig_id %>">
+        <button>SUBMIT</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<% for (let gig of gigs) { %>
+    <div class="item_preview">
+        <section class="image_caption">
+            <img src="<%= gig.image_url %>" alt="">
+        </section>
+        <div class="add_margin">
+            <p><%= gig.title %></p>
+        </div>
+        <section class="details add_margin">
+            <span><%= gig.posted_by %></span>
+            <span><%= gig.city %></span>
+        </section>
+    </div>
+
+<% } %>
