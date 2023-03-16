@@ -41,7 +41,7 @@ router.post('/sessions', (req, res) => {
 //logging user out
 router.delete('/sessions', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('home');
+        res.redirect('/');
     })
 })
 
