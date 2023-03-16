@@ -39,7 +39,7 @@ const bandNames =   [  'Funky Beats',  'Hypnotic Echoes',  'Garage Explorers',  
 
 const titles = [  'Infinite Grooves',  'Electric Odyssey',  'Sonic Boom',  'Jazz Fusion Frenzy',  'The Psychedelic Circus',  'Funky Fiesta',  'Rock n Roll Revival',  'Rhythm and Blues Revue',  'Metal Mayhem',  'Pop Sensation',  'Country Hoedown',  'Folk Tales',  'Indie Showcase',  'Garage Rock Riot',  'Punk Power Hour',  'Acoustic Hourglass',  'Experimental Excursion',  'Alternative Avenue',  'Jam Session Jamboree',  'Vibes and Melodies'];
 
-const cities = ['Melbourne', 'Sydney'];
+const cities = ['Melbourne', 'Sydney', 'Geelong', 'Bendigo'];
 
 const description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
@@ -50,19 +50,31 @@ const images = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/The_Cure_Live_in_Singapore_2-_1st_August_2007.jpg/1200px-The_Cure_Live_in_Singapore_2-_1st_August_2007.jpg',
     'https://i0.wp.com/dailyyonder.com/wp-content/uploads/2021/08/rich-mattson-northstars-2020.jpg?fit=1200%2C675',
     'https://media.pitchfork.com/photos/6298211bf8426c92b14abf66/2:1/w_1200',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Isis_performing_live_at_the_Great_American_Music_Hall_in_San_Francisco--June_29%2C_2009.jpg/640px-Isis_performing_live_at_the_Great_American_Music_Hall_in_San_Francisco--June_29%2C_2009.jpg'
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Isis_performing_live_at_the_Great_American_Music_Hall_in_San_Francisco--June_29%2C_2009.jpg/640px-Isis_performing_live_at_the_Great_American_Music_Hall_in_San_Francisco--June_29%2C_2009.jpg',
+    'https://www.lastminutemusicians.com/blog/wp-content/uploads/2014/07/jazz-trio-740x493.jpg',
+    'https://ca-times.brightspotcdn.com/dims4/default/d32e42a/2147483647/strip/true/crop/1024x613+0+0/resize/1200x718!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F3b%2Fe7%2F373b6e05d810b755bd81f084a51a%2Fla-et-ms-hostages-taken-at-eagles-of-death-met-001', 
+    'https://cdn-asia.uniteasia.org/uploads/2017/08/arcadia-1024x683.jpg',
+    'https://townsquare.media/site/846/files/2017/04/kreator-1.jpg'
   ];
 
   const keywords = ['Rock', 'Pop', 'Hip-hop', 'Jazz', 'Electronic'];
 
   const address = '123 Sample Street';
 
-pool.query(sqlCheck, (err, dbRes) => {
-    for (let count = 0; count < 10; count++) {
-        let sql = `insert into gigs (title, image_url, city, artist, address, description, keywords, date) values ($1, $2, $3, $4, $5, $6, $7, $8);`;
+// pool.query(sqlCheck, (err, dbRes) => {
+    
+//     for (let count = 0; count < 10; count++) {
+//         
+//         let sql = `insert into gigs (title, image_url, city, artist, address, description, keywords, date) values (${titles[Math.floor(Math.random() * titles.length)]},${images[Math.floor(Math.random() * images.length)]},${cities[Math.floor(Math.random() * cities.length)]},${bandNames[Math.floor(Math.random() * bandNames.length)]},${address},${description},${keywords[Math.floor(Math.random() * keywords.length)]},${day});`;
 
-        pool.query(sql, [titles[Math.floor(Math.random() * titles.length)], images[Math.floor(Math.random() * images.length)], cities[Math.floor(Math.random() * cities.length)], bandNames[Math.floor(Math.random() * bandNames.length)], address, description, keywords[Math.floor(Math.random() * keywords.length)], '03-29-2023'],  (err, dbRes) => {
-            if (err) console.log(err)
-        })
-    }
-})
+//         pool.query(sql, [titles[Math.floor(Math.random() * titles.length)], images[Math.floor(Math.random() * images.length)], cities[Math.floor(Math.random() * cities.length)], bandNames[Math.floor(Math.random() * bandNames.length)], address, description, keywords[Math.floor(Math.random() * keywords.length)], `${Math.floor(Math.random() * 31)}-29-2023`],  (err, dbRes) => {
+//             console.log(sql);
+//             if (err) console.log(err)
+//         })
+//     }
+// })
+
+let day = `${Math.floor(Math.random() * 20 + 10)}-03-2023`
+let sql = `insert into gigs (title, image_url, city, artist, address, description, keywords, date) values (` + `'${titles[Math.floor(Math.random() * titles.length)]}', '${images[Math.floor(Math.random() * images.length)]}','${cities[Math.floor(Math.random() * cities.length)]}','${bandNames[Math.floor(Math.random() * bandNames.length)]}','${address}','${description}','${keywords[Math.floor(Math.random() * keywords.length)]}','${day}');`;
+
+console.log(sql);

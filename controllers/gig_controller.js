@@ -25,7 +25,6 @@ router.get('/', (req, res) => {
 })
 
 
-
 router.use(isLoggedIn);
 
 //rendering new gig form
@@ -79,8 +78,10 @@ router.get('/gigs/:gig_id/edit', (req, res) => {
 })
 
 router.put('/gigs', (req, res) => {
-    const sql = `update gigs set title = $1, description = $2, keywords = $3, city = $4, image_url = $5, address = $6 where gig_id = $7, date = $8;`;
-    pool.query(sql, [req.body.title, req.body.description, req.body.keywords, req.body.city, req.body.image_url, req.body.address, req.body.gig_id, req.body.date], (err, dbRes) => {
+    const sql = `update gigs set title = $1, description = $2, keywords = $3, city = $4, image_url = $5, address = $6, date = $7, artist = $8 where gig_id = $9;`;
+
+    console.log(req.body.gig_id)
+    pool.query(sql, [req.body.title, req.body.description, req.body.keywords, req.body.city, req.body.image_url, req.body.address,  req.body.date, req.body.artist, req.body.gig_id], (err, dbRes) => {
         if (err) console.log(err);
         res.redirect(`/gigs/${req.body.gig_id}`);
     })
@@ -88,7 +89,6 @@ router.put('/gigs', (req, res) => {
 
 router.delete('/gigs/:gig_id', (req, res) => {
      let sql = `delete from gigs where gig_id = '${req.params.gig_id}';`
-     
      pool.query(sql, (err, dbRes) => {
         if(err) console.log(err)
         res.redirect('/');
