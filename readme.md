@@ -11,7 +11,7 @@ Introduction
 # Planning stages
 Seeing as I had Been thinking about this concept for some time now, the planning was very straightforward to me.
 -   I had already sketched wireframes of what i wanted the finished project to look like
-![WireFrames](IMG_0950.png)
+![WireFrames](./wireFrames/IMG_0950.png)
 
 # I knew that I wanted my app to:
 -   Be able to suggest users gigs based on the location within their account;
