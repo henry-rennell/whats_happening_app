@@ -1,21 +1,26 @@
 
-
-<div class="update_gig_form"> 
+<h2 class="makeBlue">Update Your gig</h2>
+<section class="new_gig">
     <form action="/gigs" method="post">
         <input type="hidden" name="_method" value="put">
-        <label for="">Title</label>
-        <input type="text" name="title" value="<%= gig.title %>">
-        <label for="">Description</label>
-        <input type="text" name="description" value="<%= gig.description %>">
-        <label for="">Keywords</label>
-        <input type="text" name="keywords" value="<%= gig.keywords %>">
-        <label for="">City</label>
-        <input type="text" name="city" value="<%= gig.city %>">
-        <label for="">Image Url</label>
-        <input type="text" name="image_url" value="<%= gig.image_url %>">
-        <label for="">Address</label>
-        <input type="text" name="address" value="<%= gig.title %>">
-        <input type="hidden" name="gig_id" value="<%= gig.gig_id %>">
-        <button>SUBMIT</button>
+        <fieldset>
+            <p><label for="">Title:</label>
+            <input type="text" name="title" value="<%= gig.title %>"></p>
+            <p><label for="">Performing Artist:</label>
+            <input type="text" name="artist" value="<%= gig.artist %>"></p>
+            <p><label for="">Description:</label>
+            <textarea name="description" rows="5" cols="50"><%= gig.description %></textarea></p>
+            <p><label for="">Genre:</label>
+            <input type="text" name="keywords" value="<%= gig.keywords %>" placeholder="Enter keywords via format: keyword1, keyword2...."></p>
+            <p><label for="">City</label>
+            <input type="text" name="city" value="<%= gig.city %>"></p>
+            <p><label for="">Image Url:</label>
+            <input type="text" name="image_url" value="<%= gig.image_url %>" ></p>
+            <p><label for="">Address:</label>
+            <input type="text" name="address" value="<%= gig.address %>"></p>
+            <p><label for="">Date:</label>
+            <input type="text" name="date" value="<%= gig.date %>"></p>
+        </fieldset>
+        <button>submit</button>
     </form>
-</div>
+</section>

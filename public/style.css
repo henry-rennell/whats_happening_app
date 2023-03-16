@@ -1,8 +1,8 @@
 * {
-    /* border: 1px solid red; */
     color: white;
     box-sizing: border-box;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -14,23 +14,74 @@ header {
     margin-top: 0;
     padding-bottom: 2%;
     border-bottom: 0.5px solid darkgray;
+    padding-top: 2%;
 }
 
+header a {
+    text-decoration: none;
+    font-size: 1.5em;
+}
 
 .header_content {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+
 }
 
-.header_content form {
+.container {
+    /* display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10%; */
+    margin: auto;
+    width: 60%;
+}
+
+aside {
+    background-color: rgb(73,73,73);
+    margin-top: 10%;
+    height: fit-content;
+}
+
+form {
+    text-align: left;
+    background-color:dimgray;
+    padding: 2%;
+}
+
+.update_gig_form form {
+    display: block;
+    padding: 5%;
+}
+
+.update_gig_form p {
+    padding: 5%;
+}
+
+.create_account {
+    margin-bottom: 5%;
+    display: block;
+}
+
+
+fieldset {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+fieldset p {
     margin-top: 5%;
 }
 
+.create_account p {
+    margin-bottom: 10px;
+}
 
-.container {
-    margin: auto;
-    width: 60%;
+.create_account input {
+    height: 30px;
+    width: 200px;
+    font-size: 1em;
 }
 
 .item_preview {
@@ -64,9 +115,14 @@ header {
     width: 100%;
 }
 
-.full_item section {
-    margin: 2% 0 0 2%;
+.delete_edit_buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
+.delete_edit_buttons form {
+    background-color: rgb(73,73,73);
 }
 
 .bottom_text {
@@ -76,8 +132,8 @@ header {
 }
 
 .description {
-    margin:5% 0 5% 0;
-    text-align: center;
+    margin:5% 0 10% 0;
+    text-align: left;
 }
 .details {
     display: flex;
@@ -88,10 +144,71 @@ header {
     margin: 0 2% 2% 2% ;
 }
 
-form input {
+button {
+    background-color: lightblue ;
     color: black;
 }
 
-button {
-    color: black;
+.makeBlue {
+    color: lightblue;
+    text-align: center;
+    border-radius: 5px;
 }
+input, textarea {
+    background-color: #404040;
+    color: white;
+    resize: none;
+}
+
+.profile_link {
+    padding: 5%;
+    background-color: lightblue;
+    text-align: center;
+    text-decoration: none;
+}
+
+.profile_link p {
+    color: black;
+
+}
+
+.add_borders {
+    border-radius: 5px;
+}
+
+.login_controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+.login_controls button{
+    width: 100%;
+    height: 100%;
+}
+
+.login_fieldset {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_gig fieldset{
+    display:block;
+    text-align: left;
+}
+
+
+.new_gig p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchForm form {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+

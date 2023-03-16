@@ -1,0 +1,25 @@
+<div class="items">
+    <h2>Search Results For: '<%= searched %>'</h2>
+
+    <% if (gigs.length > 0) {%>
+        <% for (let gig of gigs) { %>
+            <div class="item_preview">
+                <section class="image_caption">
+                    <img src="<%= gig.image_url %>" alt="">
+                </section>
+                <div class="add_margin">
+                    <p><a href="/gigs/<%= gig.gig_id %>"><%= gig.title %></a></p>
+                </div>
+                <section class="details add_margin">
+                    <span><%= gig.artist %></span>
+                    <span><%= gig.city %></span>
+                    <span><%= gig.date %></span>
+                </section>
+            </div>
+        <% } %>
+    <% } else {%>
+        
+        <h2>No Results from your search sorry.</h2>
+
+    <% } %>
+</div>

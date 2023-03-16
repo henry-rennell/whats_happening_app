@@ -12,9 +12,9 @@ router.post('/users', (req, res) => {
     const saltRounds = 10;
     //encrypting user password
     bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
-        const sql = `insert into users (username, location, email, password_digest) values ($1, $2, $3, $4);`
+        const sql = `insert into users (username, user_name, location, email, password_digest) values ($1, $2, $3, $4, $5);`
         //adding user to database.
-        pool.query(sql, [req.body.username, req.body.location, req.body.email, hash ], (err, dbRes) => {
+        pool.query(sql, [req.body.username, req.body.user_name, req.body.location, req.body.email, hash ], (err, dbRes) => {
             if (err) {
                 console.log(err);
                 res.render('create_account', {message: 'User with That Email/Username Already Exists'});
@@ -27,9 +27,8 @@ router.post('/users', (req, res) => {
 })
 
 //user profile page
-router.get('/users/:user_id', (req, res) => {
-    const sql = `select * from users where id = ${req.params.user_id};`
-    console.log(req.params.user_id)
+router.get('/users/:username', (req, res) => {
+    const sql = `select * from users where username ilike '%${req.params.username}%';`;
     pool.query(sql, (err, dbRes) => {
         const user = dbRes.rows[0];
         const sqlSearch = `select * from gigs where posted_by = '${user.username}';`;

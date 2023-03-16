@@ -11,35 +11,41 @@
     <header>
         <div class="header_content">
             <span><h1><a href="/">What's Happening?</a></h1></span>
-            <span>
-                <form action="">
-                    <input type="text">
-                    <button>Submit</button>
-                </form>
-            </span>
-            <span>
-                <form action="">
-                    <input type="text">
-                    <button>Submit</button>
-                </form>
-            </span>
                 <% if (isLoggedIn()) {%>
-                <span>
-                    <form action="/users/<%= currentUser.id %>" method="/get">
-                    <button>Profile</button>
-                    </form>
-                    <form action="/sessions" method="post">
-                        <label for=""><%= currentUser.username %></label>
-                        <input type="hidden" name="_method" value="delete">
-                        <button>Log Out</button>
-                    </form>
-                </span>
+                    <span class="login_controls">
+                        <form action="/gigs/new" method="get">
+                            <button class="add_borders profile_link">New Gig</button>
+                        </form>
+                        <form action="/users/<%= currentUser.username %>" method="get">
+                            <button class="add_borders profile_link">Profile</button>
+                            </form>
+                        <form action="/sessions" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <button class="add_borders profile_link">Log Out</button>
+                        </form>
+                    </span>
                 <% } else {%>
-                <span><a href="/login">Login</a> / <a href="/users/new">Sign Up</a></span>
+                    <span><a href="/login">Login</a> / <a href="/users/new">Sign Up</a></span>
                 <% } %>
         </div>
     </header>
     <div class="container">
+            <span class="searchForm">
+                <form action="/search" method="get">
+                    <label for="">Search using:</label>
+                    <label for="" class='makeBlue'>Gig Title</label>
+                    <input type="radio" name="searchType" value="title" checked>
+                    <label for="" class='makeBlue'>Artist</label>
+                    <input type="radio" name="searchType" value="artist">
+                    <label for="" class='makeBlue'>Date</label>
+                    <input type="radio" name="searchType" value="date">
+                    <label for="" class='makeBlue'>Genre</label>
+                    <input type="radio" name="searchType" value="keywords">
+                    <label for="" class='makeBlue'>City</label>
+                    <input type="radio" name="searchType" value="city">
+                    <p><input type="search" placeholder="Search Gigs" name="searched"><button>Submit</button>
+                </form>
+            </span>
         <%- body %>
     </div>
 

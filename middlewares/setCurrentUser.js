@@ -4,7 +4,7 @@ function setCurrentUser(req, res, next) {
     const username  = req.session.username;
     res.locals.currentUser = {};
     if(username) {
-        const sql = `select id, username from users where username = '${username}';`;
+        const sql = `select id, username, user_name, location from users where username = '${username}';`;
         pool.query(sql, (err, dbRes) => {
             if (err) {
                 console.log(err);

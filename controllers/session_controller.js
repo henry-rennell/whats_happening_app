@@ -24,7 +24,6 @@ router.post('/sessions', (req, res) => {
             res.render('login', { message, });
         } else {
             const user = dbRes.rows[0];
-                console.log(user)
                 bcrypt.compare(password, user.password_digest, (err, result) => {
                     if (err) console.log(err)
                     if(result) {
@@ -42,7 +41,7 @@ router.post('/sessions', (req, res) => {
 //logging user out
 router.delete('/sessions', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('login');
+        res.redirect('home');
     })
 })
 

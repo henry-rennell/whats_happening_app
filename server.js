@@ -16,6 +16,7 @@ const loggedInDisplay = require('./middlewares/loggedInDisplay');
 const gigController = require('./controllers/gig_controller');
 const userController = require('./controllers/user_controller');
 const sessionController = require('./controllers/session_controller');
+const searchController = require('./controllers/search_controller');
 app.use(expressLayouts);
 
 app.set('view engine', 'ejs');
@@ -39,8 +40,9 @@ app.use(express.static('public'));
 app.use(setCurrentUser);
 app.use(loggedInDisplay);
 
-app.use('/', sessionController);
+app.use('/', searchController)
 app.use('/', userController);
+app.use('/', sessionController);
 app.use('/', gigController);
 
 

@@ -2,19 +2,29 @@
     <div class="full_item">
         <img src="<%= gig.image_url %>" alt="">
         <section>
-            <h2><%= gig.title %></h2>
-            <h3>Hosted by: <%= gig.posted_by %></h3>
-            <p class="description"><%= gig.description %></p>
+            <h2 class="makeBlue"><%= gig.title %></h2>
+            <h3>Artist: <%= gig.artist %></h3>
+            <h4>Date: <%= gig.date %></h4>
+        </section>
+            <section class="description">
+            <p class="makeBlue">Description:</p>
+            <p ><%= gig.description %></p>
         </section>
         <section class="bottom_text">
-            <span><%= gig.city %></span>
-            <span><%= gig.keywords %></span>
-            <span><%= gig.address %></span>
+            <span>City: <%= gig.city %></span>
+            <span>Genre: <%= gig.keywords %></span>
+            <span>Venue Address: <%= gig.address %></span>
         </section>
 
         <% if (currentUser.username === gig.posted_by) {%>
-        <section>
-            <a href="/gigs/<%= gig.gig_id %>/edit"><button>Edit Gig</button></a>
+        <section class="delete_edit_buttons">
+            <form action="/gigs/<%= gig.gig_id %>/edit" method="get">
+                <button>Edit Gig</button>
+            </form>
+            <form action="/gigs/<%= gig.gig_id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button>Remove Gig</button>
+            </form>
         </section>
        <% } %>
     </div>
