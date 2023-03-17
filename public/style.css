@@ -15,6 +15,7 @@ header {
     padding-bottom: 2%;
     border-bottom: 0.5px solid darkgray;
     padding-top: 2%;
+    margin-bottom: 2%;
 }
 
 header a {
@@ -29,19 +30,25 @@ header a {
 
 }
 
+.header_content h1 {
+    margin-left: 5%;
+    width: 100%;
+}
+
+.login_signup {
+    margin-right: 5%;
+}
+
 .container {
-    /* display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10%; */
     margin: auto;
     width: 60%;
 }
 
-aside {
+/* aside {
     background-color: rgb(73,73,73);
     margin-top: 10%;
     height: fit-content;
-}
+} */
 
 form {
     text-align: left;
@@ -179,6 +186,7 @@ input, textarea {
 .login_controls {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-right: 5%;
     
 }
 
@@ -206,8 +214,11 @@ input, textarea {
 .searchForm form {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 2%;
 }
 
+.searchForm {
+}
 
 
 
