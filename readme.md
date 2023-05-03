@@ -9,10 +9,10 @@ https://whats-happening-app.onrender.com/
 ## Screenshots: 
 
 ### Main Feed:
-[main feed screenshot](screenshots/mainPage.png)
+![main feed screenshot](screenshots/mainPage.png)
 
 ## gig details page:
-[gig details screenshot](screenshots/gigDetails.png)
+![gig details screenshot](screenshots/gigDetails.png)
 
 # Dynamically loaded CRUD app with RESTFUL conventions
 
