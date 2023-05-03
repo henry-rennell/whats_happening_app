@@ -6,7 +6,20 @@ Link to web app:
 https://whats-happening-app.onrender.com/
 ----------------
 
-Introduction
+## Screenshots: 
+
+### Main Feed:
+[main feed screenshot](screenshots/mainPage.png)
+
+## gig details page:
+[gig details screenshot](screenshots/gigDetails.png)
+
+# Dynamically loaded CRUD app with RESTFUL conventions
+
+using Nodejs, ExpressJs and a PostgreSql Database, this allows users to make an account and post small advertisements for gigs they are performing, with all CRUD operations.
+
+
+## Introduction
 ==================
 # Planning stages
 Seeing as I had Been thinking about this concept for some time now, the planning was very straightforward to me.
